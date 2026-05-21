@@ -101,7 +101,15 @@ The file `file:///Users/macbook/Downloads/Cyclistic-analysis/cyclistic_station_m
 | `06_rides_by_bike_type.csv` | Bike type preference by rider type |
 | `07_top_stations_casual.csv` | Top 15 casual rider start stations |
 | `08_top_stations_member.csv` | Top 15 member start stations |
-| `cyclistic_station_map.html` | Interactive Folium map of top stations |
+| `cyclistic_station_map.html` | Interactive Folium map — casual vs member start stations |
+| `Rides by Day of Week.png` | Chart — total rides by day of week |
+| `Rides by Month.png` | Chart — monthly ride patterns |
+| `Rides by Hour of Day.png` | Chart — hourly ride distribution |
+| `Avg Ride Length by Day.png` | Chart — average ride length by day |
+| `Rides by Season.png` | Chart — seasonal ride breakdown |
+| `Bike Type Preference.png` | Chart — bike type usage by rider type |
+| `Top Casual Stations.png` | Chart — top 15 casual start stations |
+| `Top Member Stations.png` | Chart — top 15 member start stations |
 
 ---
 
