@@ -37,6 +37,34 @@ How do annual members and casual riders use Cyclistic bikes differently?
 
 ---
 
+## Visualisations
+
+### Rides by Day of Week
+![Rides by Day of Week](Rides%20by%20Day%20of%20Week.png)
+
+### Rides by Month
+![Rides by Month](Rides%20by%20Month.png)
+
+### Rides by Hour of Day
+![Rides by Hour of Day](Rides%20by%20Hour%20of%20Day.png)
+
+### Average Ride Length by Day
+![Avg Ride Length by Day](Avg%20Ride%20Length%20by%20Day.png)
+
+### Rides by Season
+![Rides by Season](Rides%20by%20Season.png)
+
+### Bike Type Preference
+![Bike Type Preference](Bike%20Type%20Preference.png)
+
+### Top Casual Stations
+![Top Casual Stations](Top%20Casual%20Stations.png)
+
+### Top Member Stations
+![Top Member Stations](Top%20Member%20Stations.png)
+
+---
+
 ## Three Data-Backed Recommendations
 
 ### 1. Weekend-to-Member Conversion Campaign
