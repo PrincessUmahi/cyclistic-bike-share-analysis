@@ -77,7 +77,10 @@ The file `file:///Users/macbook/Downloads/Cyclistic-analysis/cyclistic_station_m
 
 ---
 
-## About the Analyst
-Adaeze Princess Umahi is a data analyst with a background in medicine and public health, transitioning into data science. Skilled in Python, SQL, Tableau, and Power BI.
-
-[LinkedIn](https://linkedin.com/in/adaezeumahi) | [GitHub](https://github.com/PrincessUmahi)
+## About Me
+**Adaeze (Princess) Umahi**  
+Data Analyst | Medical Doctor (MBBS) | MPH — Epidemiology, Biostatistics & Data Science (University of Glasgow)  
+SQL · Python · R · Power BI · Tableau · Microsoft Dynamics 365  
+Google Data Analytics Certified | Code First Girls & DataCamp — SQL, Python, AI & Machine Learning | Data Analyst with Python (DataCamp) | Machine Learning Fundamentals (DataCamp) | Microsoft Power BI PL-300 (In Progress)  
+Building a portfolio at the intersection of health data, business intelligence and real-world analytical impact.  
+[LinkedIn](https://www.linkedin.com/in/adaezeumahi/) | [GitHub](https://github.com/PrincessUmahi)
