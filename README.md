@@ -56,7 +56,7 @@ Both groups prefer electric bikes. Offer members priority access or reduced per-
 ---
 
 ## Interactive Station Map
-The file `cyclistic_station_map.html` contains an interactive Folium map showing top casual (red) and member (blue) start stations across Chicago. Download and open in browser to explore.
+The file `file:///Users/macbook/Downloads/Cyclistic-analysis/cyclistic_station_map.html` contains an interactive Folium map showing top casual (red) and member (blue) start stations across Chicago. Download and open in browser to explore.
 
 ---
 
