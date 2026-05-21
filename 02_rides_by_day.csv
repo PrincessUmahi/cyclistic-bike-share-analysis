@@ -1,0 +1,15 @@
+member_casual,day_of_week,total_rides,avg_ride_length
+casual,Monday,223754,19.64
+casual,Tuesday,220396,17.25
+casual,Wednesday,220445,16.33
+casual,Thursday,258331,17.32
+casual,Friday,306967,19.34
+casual,Saturday,398052,22.25
+casual,Sunday,325109,22.91
+member,Monday,503450,11.92
+member,Tuesday,569302,11.88
+member,Wednesday,567038,11.75
+member,Thursday,589198,11.85
+member,Friday,527398,12.19
+member,Saturday,443125,13.4
+member,Sunday,383112,13.47

@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_ac36efa3bb3e574cd626962b20ff7323 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="position: fixed; top: 15px; left: 50%; transform: translateX(-50%);
+     z-index: 1000; background-color: white; padding: 10px 20px;
+     border-radius: 8px; box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+     font-family: Arial; font-size: 16px; font-weight: bold; color: #333;">
+     Cyclistic Bike-Share: Top Start Stations by Rider Type
+</div>
+    
+<div style="position: fixed; bottom: 30px; left: 30px; z-index: 1000;
+     background-color: white; padding: 12px 16px; border-radius: 8px;
+     box-shadow: 2px 2px 6px rgba(0,0,0,0.3); font-family: Arial; font-size: 13px;">
+     <b>Rider Type</b><br>
+     <span style="color:#e74c3c;">●</span> Casual Rider (Leisure/Tourist)<br>
+     <span style="color:#2980b9;">●</span> Annual Member (Commuter)
+</div>
+    
+            <div class="folium-map" id="map_ac36efa3bb3e574cd626962b20ff7323" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_ac36efa3bb3e574cd626962b20ff7323 = L.map(
+                "map_ac36efa3bb3e574cd626962b20ff7323",
+                {
+                    center: [41.8827, -87.6233],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 13,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_c29f1f099e111f73a13110a1caf43b2a = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_c29f1f099e111f73a13110a1caf43b2a.addTo(map_ac36efa3bb3e574cd626962b20ff7323);
+        
+    
+            var circle_marker_6ae2215bd846dfa9e84b287c8be56d0d = L.circleMarker(
+                [41.8917, -87.6086],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_ac36efa3bb3e574cd626962b20ff7323);
+        
+    
+        var popup_ece46007fc2f5af5936a54009919b3ab = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_cee3bb8a223d1b79f7ea119d5c5a877c = $(`<div id="html_cee3bb8a223d1b79f7ea119d5c5a877c" style="width: 100.0%; height: 100.0%;"><b>Casual Rider Station</b><br>Navy Pier</div>`)[0];
+                popup_ece46007fc2f5af5936a54009919b3ab.setContent(html_cee3bb8a223d1b79f7ea119d5c5a877c);
+            
+        
+
+        circle_marker_6ae2215bd846dfa9e84b287c8be56d0d.bindPopup(popup_ece46007fc2f5af5936a54009919b3ab)
+        ;
+
+        
+    
+    
+            circle_marker_6ae2215bd846dfa9e84b287c8be56d0d.bindTooltip(
+                `<div>
+                     🔴 CASUAL: Navy Pier
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5cf2b17acd6f058592a3cc53ccb0289b = L.circleMarker(
+                [41.881, -87.6167],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_ac36efa3bb3e574cd626962b20ff7323);
+        
+    
+        var popup_bcb33edcd61ea761b9576741fa910ec7 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_09e4fc03ea874b383b5157a8aa7e4180 = $(`<div id="html_09e4fc03ea874b383b5157a8aa7e4180" style="width: 100.0%; height: 100.0%;"><b>Casual Rider Station</b><br>DuSable Lake Shore Dr & Monroe St</div>`)[0];
+                popup_bcb33edcd61ea761b9576741fa910ec7.setContent(html_09e4fc03ea874b383b5157a8aa7e4180);
+            
+        
+
+        circle_marker_5cf2b17acd6f058592a3cc53ccb0289b.bindPopup(popup_bcb33edcd61ea761b9576741fa910ec7)
+        ;
+
+        
+    
+    
+            circle_marker_5cf2b17acd6f058592a3cc53ccb0289b.bindTooltip(
+                `<div>
+                     🔴 CASUAL: DuSable Lake Shore Dr & Monroe St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d6959dfb81b24d7824508b8ada75d618 = L.circleMarker(
+                [41.901, -87.6238],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_ac36efa3bb3e574cd626962b20ff7323);
+        
+    
+        var popup_4b2c6dfbfe8c706d79564b16450eca48 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_9dd69be9b07755a973fa0c7b24b87df1 = $(`<div id="html_9dd69be9b07755a973fa0c7b24b87df1" style="width: 100.0%; height: 100.0%;"><b>Casual Rider Station</b><br>Michigan Ave & Oak St</div>`)[0];
+                popup_4b2c6dfbfe8c706d79564b16450eca48.setContent(html_9dd69be9b07755a973fa0c7b24b87df1);
+            
+        
+
+        circle_marker_d6959dfb81b24d7824508b8ada75d618.bindPopup(popup_4b2c6dfbfe8c706d79564b16450eca48)
+        ;
+
+        
+    
+    
+            circle_marker_d6959dfb81b24d7824508b8ada75d618.bindTooltip(
+                `<div>
+                     🔴 CASUAL: Michigan Ave & Oak St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dd1581741565f4ea86581d15b97e5661 = L.circleMarker(
+                [41.9118, -87.6268],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_ac36efa3bb3e574cd626962b20ff7323);
+        
+    
+        var popup_8850a29cc36c706440591e1c1cfd52d8 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_92348185f606ad4014f48a7c582a4719 = $(`<div id="html_92348185f606ad4014f48a7c582a4719" style="width: 100.0%; height: 100.0%;"><b>Casual Rider Station</b><br>DuSable Lake Shore Dr & North Blvd</div>`)[0];
+                popup_8850a29cc36c706440591e1c1cfd52d8.setContent(html_92348185f606ad4014f48a7c582a4719);
+            
+        
+
+        circle_marker_dd1581741565f4ea86581d15b97e5661.bindPopup(popup_8850a29cc36c706440591e1c1cfd52d8)
+        ;
+
+        
+    
+    
+            circle_marker_dd1581741565f4ea86581d15b97e5661.bindTooltip(
+                `<div>
+                     🔴 CASUAL: DuSable Lake Shore Dr & North Blvd
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_422b24ade7cb1367d9a4c1bebd3eb80f = L.circleMarker(
+                [41.8923, -87.612],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_ac36efa3bb3e574cd626962b20ff7323);
+        
+    
+        var popup_eb5b18f36098b621f1999c90feb723be = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_567470469501b159109bffcb83c7435c = $(`<div id="html_567470469501b159109bffcb83c7435c" style="width: 100.0%; height: 100.0%;"><b>Casual Rider Station</b><br>Streeter Dr & Grand Ave</div>`)[0];
+                popup_eb5b18f36098b621f1999c90feb723be.setContent(html_567470469501b159109bffcb83c7435c);
+            
+        
+
+        circle_marker_422b24ade7cb1367d9a4c1bebd3eb80f.bindPopup(popup_eb5b18f36098b621f1999c90feb723be)
+        ;
+
+        
+    
+    
+            circle_marker_422b24ade7cb1367d9a4c1bebd3eb80f.bindTooltip(
+                `<div>
+                     🔴 CASUAL: Streeter Dr & Grand Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_66a6c940526d2c908e21eea7a13c6170 = L.circleMarker(
+                [41.8827, -87.6233],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_ac36efa3bb3e574cd626962b20ff7323);
+        
+    
+        var popup_7ca79c0d0aefd7b4e76e7dc3d4c99de7 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_37845304494665d1aa043a68d4bd0c64 = $(`<div id="html_37845304494665d1aa043a68d4bd0c64" style="width: 100.0%; height: 100.0%;"><b>Casual Rider Station</b><br>Millennium Park</div>`)[0];
+                popup_7ca79c0d0aefd7b4e76e7dc3d4c99de7.setContent(html_37845304494665d1aa043a68d4bd0c64);
+            
+        
+
+        circle_marker_66a6c940526d2c908e21eea7a13c6170.bindPopup(popup_7ca79c0d0aefd7b4e76e7dc3d4c99de7)
+        ;
+
+        
+    
+    
+            circle_marker_66a6c940526d2c908e21eea7a13c6170.bindTooltip(
+                `<div>
+                     🔴 CASUAL: Millennium Park
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_75adf4d6d1f3c1bce122c51c937f56aa = L.circleMarker(
+                [41.8676, -87.6139],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_ac36efa3bb3e574cd626962b20ff7323);
+        
+    
+        var popup_c2ec471b98199d22abc09568d326c677 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_043dc9d1ae05830d39ec4c77ff816b2f = $(`<div id="html_043dc9d1ae05830d39ec4c77ff816b2f" style="width: 100.0%; height: 100.0%;"><b>Casual Rider Station</b><br>Shedd Aquarium</div>`)[0];
+                popup_c2ec471b98199d22abc09568d326c677.setContent(html_043dc9d1ae05830d39ec4c77ff816b2f);
+            
+        
+
+        circle_marker_75adf4d6d1f3c1bce122c51c937f56aa.bindPopup(popup_c2ec471b98199d22abc09568d326c677)
+        ;
+
+        
+    
+    
+            circle_marker_75adf4d6d1f3c1bce122c51c937f56aa.bindTooltip(
+                `<div>
+                     🔴 CASUAL: Shedd Aquarium
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4cc9f377d28b3f51b53424d74b2705c4 = L.circleMarker(
+                [41.9263, -87.6308],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_ac36efa3bb3e574cd626962b20ff7323);
+        
+    
+        var popup_ce13dc837422a05da916930a42722db8 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_cb5313d5d2410a63704d642d93870e86 = $(`<div id="html_cb5313d5d2410a63704d642d93870e86" style="width: 100.0%; height: 100.0%;"><b>Casual Rider Station</b><br>Theater on the Lake</div>`)[0];
+                popup_ce13dc837422a05da916930a42722db8.setContent(html_cb5313d5d2410a63704d642d93870e86);
+            
+        
+
+        circle_marker_4cc9f377d28b3f51b53424d74b2705c4.bindPopup(popup_ce13dc837422a05da916930a42722db8)
+        ;
+
+        
+    
+    
+            circle_marker_4cc9f377d28b3f51b53424d74b2705c4.bindTooltip(
+                `<div>
+                     🔴 CASUAL: Theater on the Lake
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_33ccb067f841d7211f865e17008daf9f = L.circleMarker(
+                [41.8855, -87.6128],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_ac36efa3bb3e574cd626962b20ff7323);
+        
+    
+        var popup_b281f722bc336de9eb47887ceb3ae792 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_8858257f4835a161fbc0ca6c2e2425d8 = $(`<div id="html_8858257f4835a161fbc0ca6c2e2425d8" style="width: 100.0%; height: 100.0%;"><b>Casual Rider Station</b><br>Dusable Harbor</div>`)[0];
+                popup_b281f722bc336de9eb47887ceb3ae792.setContent(html_8858257f4835a161fbc0ca6c2e2425d8);
+            
+        
+
+        circle_marker_33ccb067f841d7211f865e17008daf9f.bindPopup(popup_b281f722bc336de9eb47887ceb3ae792)
+        ;
+
+        
+    
+    
+            circle_marker_33ccb067f841d7211f865e17008daf9f.bindTooltip(
+                `<div>
+                     🔴 CASUAL: Dusable Harbor
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1d88ed0c57036ed39b5b191df8ae92b3 = L.circleMarker(
+                [41.8728, -87.624],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_ac36efa3bb3e574cd626962b20ff7323);
+        
+    
+        var popup_e259e8977d450bcea3e1f9a2b30e8c20 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_bc091e66a070af1152de8e30dfdfabf6 = $(`<div id="html_bc091e66a070af1152de8e30dfdfabf6" style="width: 100.0%; height: 100.0%;"><b>Casual Rider Station</b><br>Michigan Ave & 8th St</div>`)[0];
+                popup_e259e8977d450bcea3e1f9a2b30e8c20.setContent(html_bc091e66a070af1152de8e30dfdfabf6);
+            
+        
+
+        circle_marker_1d88ed0c57036ed39b5b191df8ae92b3.bindPopup(popup_e259e8977d450bcea3e1f9a2b30e8c20)
+        ;
+
+        
+    
+    
+            circle_marker_1d88ed0c57036ed39b5b191df8ae92b3.bindTooltip(
+                `<div>
+                     🔴 CASUAL: Michigan Ave & 8th St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fac697b0cf55a2e4019386a64c58093e = L.circleMarker(
+                [41.9632, -87.638],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_ac36efa3bb3e574cd626962b20ff7323);
+        
+    
+        var popup_ab91dc97dfe277a3497b59200e32df99 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_bd8a23fb89c62f3870827b8d42bfe0bb = $(`<div id="html_bd8a23fb89c62f3870827b8d42bfe0bb" style="width: 100.0%; height: 100.0%;"><b>Casual Rider Station</b><br>Montrose Harbor</div>`)[0];
+                popup_ab91dc97dfe277a3497b59200e32df99.setContent(html_bd8a23fb89c62f3870827b8d42bfe0bb);
+            
+        
+
+        circle_marker_fac697b0cf55a2e4019386a64c58093e.bindPopup(popup_ab91dc97dfe277a3497b59200e32df99)
+        ;
+
+        
+    
+    
+            circle_marker_fac697b0cf55a2e4019386a64c58093e.bindTooltip(
+                `<div>
+                     🔴 CASUAL: Montrose Harbor
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2f15bd9f244b46e72f6daec1345ec529 = L.circleMarker(
+                [41.8663, -87.6067],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_ac36efa3bb3e574cd626962b20ff7323);
+        
+    
+        var popup_ec2360577ec9e20d97e22005b65d9b2d = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_3948e72b1986b6373b76d1801e7311eb = $(`<div id="html_3948e72b1986b6373b76d1801e7311eb" style="width: 100.0%; height: 100.0%;"><b>Casual Rider Station</b><br>Adler Planetarium</div>`)[0];
+                popup_ec2360577ec9e20d97e22005b65d9b2d.setContent(html_3948e72b1986b6373b76d1801e7311eb);
+            
+        
+
+        circle_marker_2f15bd9f244b46e72f6daec1345ec529.bindPopup(popup_ec2360577ec9e20d97e22005b65d9b2d)
+        ;
+
+        
+    
+    
+            circle_marker_2f15bd9f244b46e72f6daec1345ec529.bindTooltip(
+                `<div>
+                     🔴 CASUAL: Adler Planetarium
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_66a1d35f96a99fe61f9e6e7168e16c0d = L.circleMarker(
+                [41.8662, -87.617],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_ac36efa3bb3e574cd626962b20ff7323);
+        
+    
+        var popup_f68163734f4c5e57c9f60ad1d840a600 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_75aeecd6caccbecb9e12479a7e02d82c = $(`<div id="html_75aeecd6caccbecb9e12479a7e02d82c" style="width: 100.0%; height: 100.0%;"><b>Casual Rider Station</b><br>Field Museum</div>`)[0];
+                popup_f68163734f4c5e57c9f60ad1d840a600.setContent(html_75aeecd6caccbecb9e12479a7e02d82c);
+            
+        
+
+        circle_marker_66a1d35f96a99fe61f9e6e7168e16c0d.bindPopup(popup_f68163734f4c5e57c9f60ad1d840a600)
+        ;
+
+        
+    
+    
+            circle_marker_66a1d35f96a99fe61f9e6e7168e16c0d.bindTooltip(
+                `<div>
+                     🔴 CASUAL: Field Museum
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c47352ca7f15390df2800627e4b0f1f0 = L.circleMarker(
+                [41.9156, -87.634],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_ac36efa3bb3e574cd626962b20ff7323);
+        
+    
+        var popup_0b796b2374c1b72e04f44eaad2b51feb = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_a5bc4edddbc18f845a2b9bdf7ee1b799 = $(`<div id="html_a5bc4edddbc18f845a2b9bdf7ee1b799" style="width: 100.0%; height: 100.0%;"><b>Casual Rider Station</b><br>Clark St & Lincoln Ave</div>`)[0];
+                popup_0b796b2374c1b72e04f44eaad2b51feb.setContent(html_a5bc4edddbc18f845a2b9bdf7ee1b799);
+            
+        
+
+        circle_marker_c47352ca7f15390df2800627e4b0f1f0.bindPopup(popup_0b796b2374c1b72e04f44eaad2b51feb)
+        ;
+
+        
+    
+    
+            circle_marker_c47352ca7f15390df2800627e4b0f1f0.bindTooltip(
+                `<div>
+                     🔴 CASUAL: Clark St & Lincoln Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_529a18fc66d74ebc128b5f4bd1fdace9 = L.circleMarker(
+                [41.9182, -87.6363],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_ac36efa3bb3e574cd626962b20ff7323);
+        
+    
+        var popup_f88cf36632077e9c4ec2ee3fcb07440f = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_51119511e0abfcaad4a1061f6aadef02 = $(`<div id="html_51119511e0abfcaad4a1061f6aadef02" style="width: 100.0%; height: 100.0%;"><b>Casual Rider Station</b><br>Clark St & Armitage Ave</div>`)[0];
+                popup_f88cf36632077e9c4ec2ee3fcb07440f.setContent(html_51119511e0abfcaad4a1061f6aadef02);
+            
+        
+
+        circle_marker_529a18fc66d74ebc128b5f4bd1fdace9.bindPopup(popup_f88cf36632077e9c4ec2ee3fcb07440f)
+        ;
+
+        
+    
+    
+            circle_marker_529a18fc66d74ebc128b5f4bd1fdace9.bindTooltip(
+                `<div>
+                     🔴 CASUAL: Clark St & Armitage Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2b1d5924185b5ac26a8b07d40eeb0e76 = L.circleMarker(
+                [41.8891, -87.6385],
+                {"bubblingMouseEvents": true, "color": "#2980b9", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2980b9", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_ac36efa3bb3e574cd626962b20ff7323);
+        
+    
+        var popup_9a4f2c6d67e7b6638fa167fd73626735 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_852a9e6ab8743446febf4602fa4c4622 = $(`<div id="html_852a9e6ab8743446febf4602fa4c4622" style="width: 100.0%; height: 100.0%;"><b>Member Station</b><br>Kingsbury St & Kinzie St</div>`)[0];
+                popup_9a4f2c6d67e7b6638fa167fd73626735.setContent(html_852a9e6ab8743446febf4602fa4c4622);
+            
+        
+
+        circle_marker_2b1d5924185b5ac26a8b07d40eeb0e76.bindPopup(popup_9a4f2c6d67e7b6638fa167fd73626735)
+        ;
+
+        
+    
+    
+            circle_marker_2b1d5924185b5ac26a8b07d40eeb0e76.bindTooltip(
+                `<div>
+                     🔵 MEMBER: Kingsbury St & Kinzie St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_efab3492e0e2a3be44c7317d2e534be4 = L.circleMarker(
+                [41.882, -87.6397],
+                {"bubblingMouseEvents": true, "color": "#2980b9", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2980b9", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_ac36efa3bb3e574cd626962b20ff7323);
+        
+    
+        var popup_61b9669827c2ada8b38cf94eaf2d4a6f = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_257c30dfbe0e4a716d78736613389d64 = $(`<div id="html_257c30dfbe0e4a716d78736613389d64" style="width: 100.0%; height: 100.0%;"><b>Member Station</b><br>Canal St & Madison St</div>`)[0];
+                popup_61b9669827c2ada8b38cf94eaf2d4a6f.setContent(html_257c30dfbe0e4a716d78736613389d64);
+            
+        
+
+        circle_marker_efab3492e0e2a3be44c7317d2e534be4.bindPopup(popup_61b9669827c2ada8b38cf94eaf2d4a6f)
+        ;
+
+        
+    
+    
+            circle_marker_efab3492e0e2a3be44c7317d2e534be4.bindTooltip(
+                `<div>
+                     🔵 MEMBER: Canal St & Madison St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ff6bbcfa0f833fbdb87f4a705e3fda2c = L.circleMarker(
+                [41.8833, -87.6411],
+                {"bubblingMouseEvents": true, "color": "#2980b9", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2980b9", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_ac36efa3bb3e574cd626962b20ff7323);
+        
+    
+        var popup_abd02adfe767a19593407eaa0a995f1b = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_8e2457f25d251a1f5b4d87577a921bfa = $(`<div id="html_8e2457f25d251a1f5b4d87577a921bfa" style="width: 100.0%; height: 100.0%;"><b>Member Station</b><br>Clinton St & Washington Blvd</div>`)[0];
+                popup_abd02adfe767a19593407eaa0a995f1b.setContent(html_8e2457f25d251a1f5b4d87577a921bfa);
+            
+        
+
+        circle_marker_ff6bbcfa0f833fbdb87f4a705e3fda2c.bindPopup(popup_abd02adfe767a19593407eaa0a995f1b)
+        ;
+
+        
+    
+    
+            circle_marker_ff6bbcfa0f833fbdb87f4a705e3fda2c.bindTooltip(
+                `<div>
+                     🔵 MEMBER: Clinton St & Washington Blvd
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4ecd21951af126ff73ead49f0bb411c1 = L.circleMarker(
+                [41.882, -87.6411],
+                {"bubblingMouseEvents": true, "color": "#2980b9", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2980b9", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_ac36efa3bb3e574cd626962b20ff7323);
+        
+    
+        var popup_04415cdab134a92290e6fa67cc35afc3 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_773e78be3aa1221cc0fecf05075fb765 = $(`<div id="html_773e78be3aa1221cc0fecf05075fb765" style="width: 100.0%; height: 100.0%;"><b>Member Station</b><br>Clinton St & Madison St</div>`)[0];
+                popup_04415cdab134a92290e6fa67cc35afc3.setContent(html_773e78be3aa1221cc0fecf05075fb765);
+            
+        
+
+        circle_marker_4ecd21951af126ff73ead49f0bb411c1.bindPopup(popup_04415cdab134a92290e6fa67cc35afc3)
+        ;
+
+        
+    
+    
+            circle_marker_4ecd21951af126ff73ead49f0bb411c1.bindTooltip(
+                `<div>
+                     🔵 MEMBER: Clinton St & Madison St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_addfa6676020f4b015ced829cc8660a4 = L.circleMarker(
+                [41.8966, -87.6279],
+                {"bubblingMouseEvents": true, "color": "#2980b9", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2980b9", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_ac36efa3bb3e574cd626962b20ff7323);
+        
+    
+        var popup_89039af111afbe89d5e417ab5b7b9e85 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_04c37c6fa114fee227a34762f08331e8 = $(`<div id="html_04c37c6fa114fee227a34762f08331e8" style="width: 100.0%; height: 100.0%;"><b>Member Station</b><br>State St & Chicago Ave</div>`)[0];
+                popup_89039af111afbe89d5e417ab5b7b9e85.setContent(html_04c37c6fa114fee227a34762f08331e8);
+            
+        
+
+        circle_marker_addfa6676020f4b015ced829cc8660a4.bindPopup(popup_89039af111afbe89d5e417ab5b7b9e85)
+        ;
+
+        
+    
+    
+            circle_marker_addfa6676020f4b015ced829cc8660a4.bindTooltip(
+                `<div>
+                     🔵 MEMBER: State St & Chicago Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f270ab91314253f9c9dcd8f964e7828b = L.circleMarker(
+                [41.903, -87.6344],
+                {"bubblingMouseEvents": true, "color": "#2980b9", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2980b9", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_ac36efa3bb3e574cd626962b20ff7323);
+        
+    
+        var popup_0651f1ad70dcaec316288444b66086d9 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_bbd3fc9d4c50fe0530362d39734b3a8d = $(`<div id="html_bbd3fc9d4c50fe0530362d39734b3a8d" style="width: 100.0%; height: 100.0%;"><b>Member Station</b><br>Wells St & Elm St</div>`)[0];
+                popup_0651f1ad70dcaec316288444b66086d9.setContent(html_bbd3fc9d4c50fe0530362d39734b3a8d);
+            
+        
+
+        circle_marker_f270ab91314253f9c9dcd8f964e7828b.bindPopup(popup_0651f1ad70dcaec316288444b66086d9)
+        ;
+
+        
+    
+    
+            circle_marker_f270ab91314253f9c9dcd8f964e7828b.bindTooltip(
+                `<div>
+                     🔵 MEMBER: Wells St & Elm St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a9865b4c434827a82dee3b3a834d0308 = L.circleMarker(
+                [41.903, -87.6313],
+                {"bubblingMouseEvents": true, "color": "#2980b9", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2980b9", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_ac36efa3bb3e574cd626962b20ff7323);
+        
+    
+        var popup_6b1696f482f5fcc23cb190cdf4733106 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_a03b3b77c140e5af3ae0115d3d89764c = $(`<div id="html_a03b3b77c140e5af3ae0115d3d89764c" style="width: 100.0%; height: 100.0%;"><b>Member Station</b><br>Clark St & Elm St</div>`)[0];
+                popup_6b1696f482f5fcc23cb190cdf4733106.setContent(html_a03b3b77c140e5af3ae0115d3d89764c);
+            
+        
+
+        circle_marker_a9865b4c434827a82dee3b3a834d0308.bindPopup(popup_6b1696f482f5fcc23cb190cdf4733106)
+        ;
+
+        
+    
+    
+            circle_marker_a9865b4c434827a82dee3b3a834d0308.bindTooltip(
+                `<div>
+                     🔵 MEMBER: Clark St & Elm St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c068ad78a57358a73447a139576a56b3 = L.circleMarker(
+                [41.8779, -87.6411],
+                {"bubblingMouseEvents": true, "color": "#2980b9", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2980b9", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_ac36efa3bb3e574cd626962b20ff7323);
+        
+    
+        var popup_312f633809d8cb017f71e3b174a28794 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_5343edc3c4fd01c0cce47e7bacfd97ca = $(`<div id="html_5343edc3c4fd01c0cce47e7bacfd97ca" style="width: 100.0%; height: 100.0%;"><b>Member Station</b><br>Clinton St & Jackson Blvd</div>`)[0];
+                popup_312f633809d8cb017f71e3b174a28794.setContent(html_5343edc3c4fd01c0cce47e7bacfd97ca);
+            
+        
+
+        circle_marker_c068ad78a57358a73447a139576a56b3.bindPopup(popup_312f633809d8cb017f71e3b174a28794)
+        ;
+
+        
+    
+    
+            circle_marker_c068ad78a57358a73447a139576a56b3.bindTooltip(
+                `<div>
+                     🔵 MEMBER: Clinton St & Jackson Blvd
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cc574e3e845248e7424787f6346838a9 = L.circleMarker(
+                [41.912, -87.6344],
+                {"bubblingMouseEvents": true, "color": "#2980b9", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2980b9", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_ac36efa3bb3e574cd626962b20ff7323);
+        
+    
+        var popup_0464cb1543478d645157cfe176825561 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_84719e8f68beeca0c62da44d484768ca = $(`<div id="html_84719e8f68beeca0c62da44d484768ca" style="width: 100.0%; height: 100.0%;"><b>Member Station</b><br>Wells St & Concord Ln</div>`)[0];
+                popup_0464cb1543478d645157cfe176825561.setContent(html_84719e8f68beeca0c62da44d484768ca);
+            
+        
+
+        circle_marker_cc574e3e845248e7424787f6346838a9.bindPopup(popup_0464cb1543478d645157cfe176825561)
+        ;
+
+        
+    
+    
+            circle_marker_cc574e3e845248e7424787f6346838a9.bindTooltip(
+                `<div>
+                     🔵 MEMBER: Wells St & Concord Ln
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_33be4b00c918ca52d4ceeb16b2886b91 = L.circleMarker(
+                [41.8948, -87.6344],
+                {"bubblingMouseEvents": true, "color": "#2980b9", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2980b9", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_ac36efa3bb3e574cd626962b20ff7323);
+        
+    
+        var popup_564c03282c4e11db593fd1817047e523 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_f336912446196312083231e948df4369 = $(`<div id="html_f336912446196312083231e948df4369" style="width: 100.0%; height: 100.0%;"><b>Member Station</b><br>Wells St & Huron St</div>`)[0];
+                popup_564c03282c4e11db593fd1817047e523.setContent(html_f336912446196312083231e948df4369);
+            
+        
+
+        circle_marker_33be4b00c918ca52d4ceeb16b2886b91.bindPopup(popup_564c03282c4e11db593fd1817047e523)
+        ;
+
+        
+    
+    
+            circle_marker_33be4b00c918ca52d4ceeb16b2886b91.bindTooltip(
+                `<div>
+                     🔵 MEMBER: Wells St & Huron St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_13dae83b67542c6da9a439ec6f19d03c = L.circleMarker(
+                [41.8794, -87.6397],
+                {"bubblingMouseEvents": true, "color": "#2980b9", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2980b9", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_ac36efa3bb3e574cd626962b20ff7323);
+        
+    
+        var popup_4f02ba0df1be9c4b626f150ce3c426cf = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_eb57fbc58587c64ca86285bd0e14aa10 = $(`<div id="html_eb57fbc58587c64ca86285bd0e14aa10" style="width: 100.0%; height: 100.0%;"><b>Member Station</b><br>Canal St & Adams St</div>`)[0];
+                popup_4f02ba0df1be9c4b626f150ce3c426cf.setContent(html_eb57fbc58587c64ca86285bd0e14aa10);
+            
+        
+
+        circle_marker_13dae83b67542c6da9a439ec6f19d03c.bindPopup(popup_4f02ba0df1be9c4b626f150ce3c426cf)
+        ;
+
+        
+    
+    
+            circle_marker_13dae83b67542c6da9a439ec6f19d03c.bindTooltip(
+                `<div>
+                     🔵 MEMBER: Canal St & Adams St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_71c12fcf09bc66a9582b35e719ef302f = L.circleMarker(
+                [41.894, -87.6385],
+                {"bubblingMouseEvents": true, "color": "#2980b9", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2980b9", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_ac36efa3bb3e574cd626962b20ff7323);
+        
+    
+        var popup_9a08624e2accf6d2d28289b6794b3682 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_80c7b2c6a3dfa6f84a568b5786afe048 = $(`<div id="html_80c7b2c6a3dfa6f84a568b5786afe048" style="width: 100.0%; height: 100.0%;"><b>Member Station</b><br>Kingsbury St & Erie St</div>`)[0];
+                popup_9a08624e2accf6d2d28289b6794b3682.setContent(html_80c7b2c6a3dfa6f84a568b5786afe048);
+            
+        
+
+        circle_marker_71c12fcf09bc66a9582b35e719ef302f.bindPopup(popup_9a08624e2accf6d2d28289b6794b3682)
+        ;
+
+        
+    
+    
+            circle_marker_71c12fcf09bc66a9582b35e719ef302f.bindTooltip(
+                `<div>
+                     🔵 MEMBER: Kingsbury St & Erie St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_17a8326e9b76634b9bf0bdcb10468412 = L.circleMarker(
+                [41.7915, -87.599],
+                {"bubblingMouseEvents": true, "color": "#2980b9", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2980b9", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_ac36efa3bb3e574cd626962b20ff7323);
+        
+    
+        var popup_088213a7dd732e5c21fdd34de13e65e0 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_42290ca0574b85ff3866f96671e32351 = $(`<div id="html_42290ca0574b85ff3866f96671e32351" style="width: 100.0%; height: 100.0%;"><b>Member Station</b><br>University Ave & 57th St</div>`)[0];
+                popup_088213a7dd732e5c21fdd34de13e65e0.setContent(html_42290ca0574b85ff3866f96671e32351);
+            
+        
+
+        circle_marker_17a8326e9b76634b9bf0bdcb10468412.bindPopup(popup_088213a7dd732e5c21fdd34de13e65e0)
+        ;
+
+        
+    
+    
+            circle_marker_17a8326e9b76634b9bf0bdcb10468412.bindTooltip(
+                `<div>
+                     🔵 MEMBER: University Ave & 57th St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0e674dea488257197552c6b52a5a137c = L.circleMarker(
+                [41.8891, -87.644],
+                {"bubblingMouseEvents": true, "color": "#2980b9", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2980b9", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_ac36efa3bb3e574cd626962b20ff7323);
+        
+    
+        var popup_4a6f1fbf9f985896b5a1bdf3fe22933b = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_c6d967f6e4798e9b6a90ed5fcfea7d7c = $(`<div id="html_c6d967f6e4798e9b6a90ed5fcfea7d7c" style="width: 100.0%; height: 100.0%;"><b>Member Station</b><br>Desplaines St & Kinzie St</div>`)[0];
+                popup_4a6f1fbf9f985896b5a1bdf3fe22933b.setContent(html_c6d967f6e4798e9b6a90ed5fcfea7d7c);
+            
+        
+
+        circle_marker_0e674dea488257197552c6b52a5a137c.bindPopup(popup_4a6f1fbf9f985896b5a1bdf3fe22933b)
+        ;
+
+        
+    
+    
+            circle_marker_0e674dea488257197552c6b52a5a137c.bindTooltip(
+                `<div>
+                     🔵 MEMBER: Desplaines St & Kinzie St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8bf9d937fccb373c127eeccb30082bc3 = L.circleMarker(
+                [41.8902, -87.6344],
+                {"bubblingMouseEvents": true, "color": "#2980b9", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2980b9", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_ac36efa3bb3e574cd626962b20ff7323);
+        
+    
+        var popup_7b0b59f69b34015b74dfbaa90476acc6 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_0aae96504ae7a7342428830529cbeb48 = $(`<div id="html_0aae96504ae7a7342428830529cbeb48" style="width: 100.0%; height: 100.0%;"><b>Member Station</b><br>Wells St & Hubbard St</div>`)[0];
+                popup_7b0b59f69b34015b74dfbaa90476acc6.setContent(html_0aae96504ae7a7342428830529cbeb48);
+            
+        
+
+        circle_marker_8bf9d937fccb373c127eeccb30082bc3.bindPopup(popup_7b0b59f69b34015b74dfbaa90476acc6)
+        ;
+
+        
+    
+    
+            circle_marker_8bf9d937fccb373c127eeccb30082bc3.bindTooltip(
+                `<div>
+                     🔵 MEMBER: Wells St & Hubbard St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>
