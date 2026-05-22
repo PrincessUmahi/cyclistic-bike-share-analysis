@@ -26,11 +26,55 @@ How do annual members and casual riders use Cyclistic bikes differently?
 
 ---
 
+## Analysis Framework — Google Data Analysis Process
+
+This project follows the 6-phase data analysis process from the Google Data Analytics Certificate:
+
+### 1. Ask
+Defined the business question: *How do annual members and casual riders use Cyclistic bikes differently?*
+Identified the goal: generate data-backed recommendations to convert casual riders into annual members.
+
+### 2. Prepare
+Downloaded 12 months of Divvy trip data (January 2025 – April 2026) from Motivate International Inc.
+Verified data credibility — reliable, original, comprehensive, current and cited (ROCCC).
+Confirmed 13 columns across 5,697,455 rows with no personally identifiable information.
+
+### 3. Process
+Cleaned and transformed data using Python (pandas):
+- Converted timestamps to datetime format
+- Calculated `ride_length_mins` from start and end times
+- Extracted `day_of_week`, `month`, `hour_of_day` and `season`
+- Removed 161,778 invalid rides (under 1 minute, over 24 hours, duplicates)
+- Final clean dataset: 5,535,677 rides
+
+### 4. Analyse
+Generated 8 summary tables to identify patterns and differences between rider types:
+- Ride length by rider type
+- Rides by day of week, month, hour of day and season
+- Bike type preference
+- Top 15 start stations for casual and member riders
+- Created an interactive geographic map using Folium
+
+### 5. Share
+Communicated findings through:
+- 8 interactive Tableau visualisations published on Tableau Public
+- A combined dashboard: *Cyclistic Bike-Share Analysis: Member vs Casual Riders*
+- An interactive Folium map showing the geographic split between rider types across Chicago
+- This GitHub repository with full documentation, screenshots and analysis files
+
+### 6. Act
+Three data-backed recommendations for converting casual riders to annual members:
+1. **Weekend-to-Member Conversion Campaign** — target casual riders at leisure stations on Saturdays and Sundays
+2. **Summer Pass Product** — discounted 3-month membership targeting the June–August spike
+3. **Electric Bike Member Incentives** — priority access to electric bikes to increase membership value
+
+---
+
 ## Key Findings
 1. **Ride Length:** Casual riders average 19.72 mins vs members at 12.26 mins — casuals ride 60% longer per trip
 2. **Day Pattern:** Casuals peak on weekends (Saturday/Sunday), members peak on weekdays (Thu/Fri) — leisure vs commute behaviour
 3. **Time of Day:** Members show clear commute peaks at 8am and 5pm; casuals build gradually through the afternoon
-4. **Seasonality:** Both groups peak in summer — casual ridership drops 78% in winter vs 70% for members
+4. **Seasonality:** Both groups peak in summer — casual ridership drops 90% in winter vs 70% for members
 5. **Top Casual Stations:** Navy Pier, DuSable Lake Shore, Millennium Park — all tourist and leisure locations
 6. **Top Member Stations:** Kingsbury/Kinzie, Canal/Madison, Clinton St — all downtown commuter corridors
 7. **Bike Preference:** Both groups prefer electric bikes; casuals on classic bikes ride nearly twice as long (29 mins vs 14 mins)
@@ -84,7 +128,13 @@ Both groups prefer electric bikes. Offer members priority access or reduced per-
 ---
 
 ## Interactive Station Map
-The file `file:///Users/macbook/Downloads/Cyclistic-analysis/cyclistic_station_map.html` contains an interactive Folium map showing top casual (red) and member (blue) start stations across Chicago. Download and open in browser to explore.
+
+The file `cyclistic_station_map.html` is included in this repository. To view the interactive map:
+1. Click on `cyclistic_station_map.html` in the file list above
+2. Click **"Download raw file"**
+3. Open the downloaded file in any browser
+
+The map shows top casual rider stations (🔴 red) and member stations (🔵 blue) across Chicago, visually confirming the leisure vs commuter geographic split.
 
 ---
 
