@@ -11,7 +11,7 @@ How do annual members and casual riders use Cyclistic bikes differently?
 
 ## Data
 - **Source:** Divvy Trip Data (Motivate International Inc.)
-- **Period:** January 2025 – April 2026
+- **Period:** May 2025 – April 2026 (12 months)
 - **Raw data:** 5,697,455 rides
 - **After cleaning:** 5,535,677 rides
 - **Cleaning removed:** 161,778 rides (under 1 min, over 24 hrs, duplicates)
@@ -35,7 +35,7 @@ Defined the business question: *How do annual members and casual riders use Cycl
 Identified the goal: generate data-backed recommendations to convert casual riders into annual members.
 
 ### 2. Prepare
-Downloaded 12 months of Divvy trip data (January 2025 – April 2026) from Motivate International Inc.
+Downloaded 12 months of Divvy trip data ( May 2025 – April 2026 ) from Motivate International Inc.
 Verified data credibility — reliable, original, comprehensive, current and cited (ROCCC).
 Confirmed 13 columns across 5,697,455 rows with no personally identifiable information.
 
@@ -127,6 +127,16 @@ Both groups prefer electric bikes. Offer members priority access or reduced per-
 
 ---
 
+## Conclusions
+
+The data strongly suggests that **annual members are primarily weekday commuters** using bikes for short, purposeful trips in downtown Chicago. **Casual riders are predominantly leisure users and tourists**, taking longer rides along the lakefront and at tourist attractions, concentrated on weekends and in summer months.
+
+This behavioural distinction is visible across every dimension analysed — ride length, time of day, day of week, seasonality, station location and bike type preference — making it a robust and reliable finding on which to base marketing strategy.
+
+The three recommendations target the highest-impact conversion opportunities identified directly from the data: weekend leisure riders at tourist stations, the summer ridership spike, and the shared preference for electric bikes as a membership incentive.
+
+---
+
 ## Tableau Dashboard
 [View Interactive Dashboard](https://public.tableau.com/app/profile/adaeze.princess.umahi/viz/CyclisticBike-ShareAnalysisAdaezePrincessUmahi/Dashboard1)
 
@@ -143,6 +153,14 @@ The map shows top casual rider stations (🔴 red) and member stations (🔵 blu
 
 ---
 
+## Limitations & Assumptions
+- Station name nulls (1.2M rows) were retained — these represent electric bike rides which do not require docking at a named station
+- Ride length outliers above 24 hours were removed as they likely represent lost or stolen bikes
+- January 2026 data was unavailable at time of download — January 2025 was used as a substitute for winter month representation
+- Rider demographic data (age, gender, location) is unavailable due to privacy restrictions — this limits segmentation analysis
+
+---
+  
 ## Repository Files
 
 | File | Description |
