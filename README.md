@@ -83,6 +83,11 @@ Three data-backed recommendations for converting casual riders to annual members
 
 ## Visualisations
 
+### Dashboard Overview
+![Dashboard Overview](dashboard_overview.png)
+
+---
+
 ### Rides by Day of Week
 ![Rides by Day of Week](Rides%20by%20Day%20of%20Week.png)
 
