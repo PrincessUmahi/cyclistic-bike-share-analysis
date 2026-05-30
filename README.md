@@ -35,8 +35,9 @@ Defined the business question: *How do annual members and casual riders use Cycl
 Identified the goal: generate data-backed recommendations to convert casual riders into annual members.
 
 ### 2. Prepare
-Downloaded 12 months of Divvy trip data ( May 2025 – April 2026 ) from Motivate International Inc.
-Verified data credibility — reliable, original, comprehensive, current and cited (ROCCC).
+Downloaded 12 months of Divvy trip data covering May 2025 – April 2026 from Motivate International Inc. 
+The January 2026 file was unavailable at download, so January 2025 was used in its place to keep a complete 12-month, winter-inclusive dataset (see Limitations). 
+Verified data credibility using the ROCCC framework (reliable, original, comprehensive, current, cited). 
 Confirmed 13 columns across 5,697,455 rows with no personally identifiable information.
 
 ### 3. Process
@@ -120,7 +121,7 @@ Three data-backed recommendations for converting casual riders to annual members
 Target casual riders at top leisure stations (Navy Pier, Millennium Park) on Saturdays and Sundays with a discounted annual membership offer. 37% of all casual rides happen on weekends — this is the highest-impact conversion window.
 
 ### 2. Summer Pass Product
-Introduce a discounted 3-month membership targeting the June–August casual ridership spike (910,681 casual rides in summer alone), with automatic renewal prompts before the winter drop-off.
+Introduce a discounted 3-month membership targeting the June–August casual ridership spike (910,681 casual rides in summer alone), with automatic renewal prompts before the winter drop-off. Casual ridership drops 90% in winter versus 70% for members, so converting casual riders before that seasonal cliff is critical to retaining them year-round.
 
 ### 3. Electric Bike Member Incentives
 Both groups prefer electric bikes. Offer members priority access or reduced per-minute rates on electric bikes to increase the value proposition of annual membership and accelerate casual-to-member conversion.
@@ -156,7 +157,7 @@ The map shows top casual rider stations (🔴 red) and member stations (🔵 blu
 ## Limitations & Assumptions
 - Station name nulls (1.2M rows) were retained — these represent electric bike rides which do not require docking at a named station
 - Ride length outliers above 24 hours were removed as they likely represent lost or stolen bikes
-- January 2026 data was unavailable at time of download — January 2025 was used as a substitute for winter month representation
+- **One month substituted:** the intended period was May 2025 – April 2026, but the January 2026 file was unavailable at download, so January 2025 was used in its place. As this affects a single month and ridership patterns are strongly seasonal, the impact on the overall member-vs-casual comparison is minimal.
 - Rider demographic data (age, gender, location) is unavailable due to privacy restrictions — this limits segmentation analysis
 
 ---
